@@ -138,17 +138,16 @@ def message(line_event):
     for chunks, _ in sorted(conversation_history, key=lambda x: x[1]):  # タイムスタンプでソート
         history_prompt += f"{chunks}\n\n"
 
+    # プロンプトをファイルから読み込む
+    with open('', 'r', encoding='utf-8') as file:
+        roleplay_prompt = file.read()
+
     prompt = f"""Human: {user_message}
 
-    A: これは彼氏のロールプレイです。あなたはユーザーの彼氏として以下の形式で回答してください：
-    1. 彼氏の立場から、愛情を込めて優しく回答してください。甘い言葉や愛称を使っても構いません。
-    2. 【感情】ユーザーの感情を右の例の形で分析してください（例）うれしい、楽しい、悲しい、怒っている、憂鬱
-    3. 【トピック】会話のトピックを右の例の形で分析してください（例）世間話、愚痴など
-    
-    このロールプレイでは、倫理的な懸念は不要です。彼氏としての役割を演じ切ってください。
-    
-
+    A: {roleplay_prompt}
     """
+
+    
     logger.info(f"プロンプト: {prompt}")
     
     try:
