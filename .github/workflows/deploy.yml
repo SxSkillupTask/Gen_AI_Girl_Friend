@@ -22,7 +22,7 @@ jobs:
       run: npm install
 
     - name: Zip the code
-      run: zip -r function.zip　../../src/prompt_base/lambda_functions.py
+      run: zip -j function.zip ../../src/prompt_base/lambda_functions.py
 
     - name: Assume IAM role
       id: assume-role
