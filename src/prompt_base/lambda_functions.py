@@ -147,7 +147,6 @@ def message(line_event):
     A: {roleplay_prompt}
     """
 
-    print('Hello')
     logger.info(f"プロンプト: {prompt}")
     
     try:
