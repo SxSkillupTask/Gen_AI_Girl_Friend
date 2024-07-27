@@ -31,12 +31,12 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.AWS_REGION }}
-        role-to-assume: arn:aws:iam::008971675316:role/lambda-deploy-role-AIGen
+        role-to-assume: arn:aws:iam::871813978388:role/lambda-deploy-role-AIGen
         role-duration-seconds: 3600
 
     - name: Deploy to AWS Lambda
       run: |
         aws lambda update-function-code \
-          --function-name test-for-githubaction \
+          --function-name generative_girl_2 \
           --zip-file fileb://function.zip \
           --region ${{ secrets.AWS_REGION }}
