@@ -1,1 +1,1 @@
-from .genetic_algorithm import GeneticAlgorithm
+from .poet_algorithm import POETAlgorithm
